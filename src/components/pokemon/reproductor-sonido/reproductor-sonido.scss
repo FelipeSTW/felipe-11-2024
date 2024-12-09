@@ -1,0 +1,17 @@
+.reproductor-sonido {
+    @apply inline-block;
+  
+    .boton-reproducir {
+      @apply p-2 rounded-full bg-gray-100 hover:bg-gray-200 
+             transition-colors duration-200 focus:outline-none 
+             focus:ring-2 focus:ring-offset-2 focus:ring-blue-500;
+  
+      &:active {
+        @apply transform scale-95;
+      }
+  
+      .icono-sonido {
+        @apply w-6 h-6 text-gray-700;
+      }
+    }
+  }
