@@ -1,0 +1,29 @@
+<nav class="navegacion">
+    <div class="contenedor-nav">
+      <router-link to="/" class="logo">
+        <img 
+          src="@/assets/pokeball.svg" 
+          alt="Pokéball"
+          class="icono-pokeball"
+        />
+        <span class="texto-logo">PokéEquipo</span>
+      </router-link>
+  
+      <div class="menu">
+        <router-link 
+          to="/" 
+          class="enlace-menu"
+          :class="{ 'activo': esPaginaInicio }"
+        >
+          Pokédex
+        </router-link>
+        <router-link 
+          to="/equipo" 
+          class="enlace-menu"
+          :class="{ 'activo': !esPaginaInicio }"
+        >
+          Mi Equipo
+        </router-link>
+      </div>
+    </div>
+  </nav>
