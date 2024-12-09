@@ -1,0 +1,51 @@
+.tarjeta-pokemon {
+  @apply rounded-lg shadow-md p-4 bg-white transition-all duration-300;
+
+  &.seleccionable {
+    @apply cursor-pointer hover:shadow-lg hover:scale-105;
+  }
+
+  &.en-equipo {
+    @apply border-2 border-blue-500;
+  }
+
+  .imagen-pokemon {
+    @apply w-32 h-32 mx-auto;
+  }
+
+  .info-pokemon {
+    @apply mt-4 text-center;
+
+    .nombre-pokemon {
+      @apply text-lg font-semibold capitalize;
+    }
+
+    .tipos-pokemon {
+      @apply flex gap-2 justify-center mt-2;
+
+      .tipo-badge {
+        @apply px-3 py-1 rounded-full text-sm text-white capitalize;
+
+        // Estilos para los tipos de Pokémon
+        &.normal { @apply bg-gray-400; }
+        &.fire { @apply bg-red-500; }
+        &.water { @apply bg-blue-500; }
+        &.grass { @apply bg-green-500; }
+        &.electric { @apply bg-yellow-500; }
+        &.ice { @apply bg-blue-300; }
+        &.fighting { @apply bg-red-700; }
+        &.poison { @apply bg-purple-500; }
+        &.ground { @apply bg-yellow-700; }
+        &.flying { @apply bg-indigo-400; }
+        &.psychic { @apply bg-pink-500; }
+        &.bug { @apply bg-green-600; }
+        &.rock { @apply bg-yellow-800; }
+        &.ghost { @apply bg-purple-700; }
+        &.dark { @apply bg-gray-800; }
+        &.dragon { @apply bg-indigo-700; }
+        &.steel { @apply bg-gray-500; }
+        &.fairy { @apply bg-pink-400; }
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+<div 
+  class="tarjeta-pokemon"
+  :class="{
+    'seleccionable': puedeSerSeleccionado,
+    'en-equipo': estaEnEquipo
+  }"
+  @click="manejarClick"
+>
+  <img 
+    :src="pokemon.imagenes.otros['official-artwork'].frontal_defecto" 
+    :alt="pokemon.nombre"
+    class="imagen-pokemon"
+  />
+  <div class="info-pokemon">
+    <h3 class="nombre-pokemon">{{ pokemon.nombre }}</h3>
+    <div class="tipos-pokemon">
+      <span 
+        v-for="tipo in pokemon.tipos" 
+        :key="tipo.posicion"
+        class="tipo-badge"
+        :class="tipo.tipo.nombre"
+      >
+        {{ tipo.tipo.nombre }}
+      </span>
+    </div>
+  </div>
+</div>
