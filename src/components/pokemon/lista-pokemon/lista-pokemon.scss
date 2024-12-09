@@ -1,0 +1,28 @@
+.lista-pokemon {
+    @apply w-full p-4;
+  
+    .error-mensaje {
+      @apply text-red-500 text-center p-4 bg-red-100 rounded-lg;
+    }
+  
+    .contenedor-lista {
+      @apply space-y-4;
+  
+      .cargando {
+        @apply text-center text-gray-600 p-4;
+      }
+  
+      .grid-pokemon {
+        @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4;
+      }
+  
+      .boton-cargar-mas {
+        @apply mt-4 w-full py-2 px-4 bg-blue-500 text-white rounded-lg 
+               hover:bg-blue-600 transition-colors duration-200;
+  
+        &:disabled {
+          @apply bg-gray-400 cursor-not-allowed;
+        }
+      }
+    }
+  }
