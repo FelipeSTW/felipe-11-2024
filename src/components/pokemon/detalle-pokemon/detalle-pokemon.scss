@@ -1,0 +1,71 @@
+.detalle-pokemon {
+    @apply max-w-4xl mx-auto p-4;
+  
+    .error-mensaje {
+      @apply text-red-500 text-center p-4 bg-red-100 rounded-lg;
+    }
+  
+    .cargando {
+      @apply text-center text-gray-600 p-4;
+    }
+  
+    .encabezado {
+      @apply flex justify-between items-center mb-8;
+  
+      .titulo {
+        @apply text-3xl font-bold capitalize flex items-center gap-2;
+  
+        .numero {
+          @apply text-gray-500 text-xl;
+        }
+      }
+    }
+  
+    .contenido-principal {
+      @apply grid grid-cols-1 md:grid-cols-2 gap-8;
+  
+      .imagen-contenedor {
+        @apply flex justify-center items-center;
+  
+        .imagen-pokemon {
+          @apply w-full max-w-md;
+        }
+      }
+  
+      .info-contenedor {
+        @apply space-y-6;
+  
+        .tipos {
+          @apply flex gap-2;
+        }
+  
+        .medidas {
+          @apply flex gap-8;
+  
+          .medida {
+            @apply flex flex-col;
+  
+            .etiqueta {
+              @apply text-sm text-gray-600;
+            }
+  
+            .valor {
+              @apply text-lg font-medium;
+            }
+          }
+        }
+  
+        .descripcion {
+          @apply text-gray-700 leading-relaxed;
+        }
+      }
+    }
+  
+    .seccion-evoluciones {
+      @apply mt-12;
+  
+      .subtitulo {
+        @apply text-2xl font-bold mb-4;
+      }
+    }
+  }
