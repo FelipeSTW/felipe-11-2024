@@ -1,0 +1,79 @@
+<div class="vista-pokemon">
+    <div class="encabezado">
+      <button @click="navegarAEquipo" class="boton-regresar">
+        ← Volver al equipo
+      </button>
+    </div>
+  
+    <div class="contenido-principal">
+      <div v-if="error" class="error-mensaje">
+        {{ error }}
+      </div>
+  
+      <div v-else-if="cargando" class="cargando">
+        <div class="spinner">Cargando...</div>
+      </div>
+  
+      <template v-else-if="pokemon">
+        <div class="informacion-pokemon">
+          <div class="seccion-principal">
+            <h1 class="nombre">
+              {{ pokemon.nombre }}
+              <span class="numero">#{{ pokemon.id.toString().padStart(3, '0') }}</span>
+            </h1>
+  
+            <div class="contenedor-imagen">
+              <img 
+                :src="pokemon.imagenes.otros['official-artwork'].frontal_defecto"
+                :alt="pokemon.nombre"
+                class="imagen-pokemon"
+              />
+            </div>
+  
+            <div class="tipos">
+              <span 
+                v-for="tipo in pokemon.tipos" 
+                :key="tipo.tipo.nombre"
+                class="tipo-badge"
+                :class="tipo.tipo.nombre"
+              >
+                {{ tipo.tipo.nombre }}
+              </span>
+            </div>
+  
+            <ReproductorSonido
+              :url-sonido="pokemon.sonidos.ultimo"
+              :nombre-pokemon="pokemon.nombre"
+            />
+          </div>
+  
+          <div class="detalles">
+            <div class="medidas">
+              <div class="medida">
+                <span class="etiqueta">Altura</span>
+                <span class="valor">{{ pokemon.altura / 10 }}m</span>
+              </div>
+              <div class="medida">
+                <span class="etiqueta">Peso</span>
+                <span class="valor">{{ pokemon.peso / 10 }}kg</span>
+              </div>
+            </div>
+  
+            <div class="descripcion">
+              {{ obtenerDescripcionEspanol() }}
+            </div>
+          </div>
+  
+          <div class="estadisticas">
+            <h2 class="subtitulo">Estadísticas base</h2>
+            <EstadisticasPokemon :estadisticas="pokemon.estadisticas" />
+          </div>
+  
+          <div class="evoluciones" v-if="cadenaEvolutiva">
+            <h2 class="subtitulo">Cadena evolutiva</h2>
+            <CadenaEvolutiva :cadena="cadenaEvolutiva.cadena" />
+          </div>
+        </div>
+      </template>
+    </div>
+  </div>

@@ -1,0 +1,87 @@
+.vista-pokemon {
+    @apply min-h-screen bg-gray-50;
+  
+    .encabezado {
+      @apply bg-white shadow-md py-4 px-6 mb-6;
+  
+      .boton-regresar {
+        @apply text-gray-600 hover:text-gray-800 transition-colors duration-200;
+      }
+    }
+  
+    .contenido-principal {
+      @apply container mx-auto px-4 pb-8;
+  
+      .error-mensaje {
+        @apply text-red-500 text-center p-4 bg-red-100 rounded-lg;
+      }
+  
+      .cargando {
+        @apply flex justify-center items-center min-h-[400px];
+  
+        .spinner {
+          @apply text-gray-600;
+        }
+      }
+  
+      .informacion-pokemon {
+        @apply bg-white rounded-lg shadow-md overflow-hidden;
+  
+        .seccion-principal {
+          @apply p-6 text-center border-b border-gray-200;
+  
+          .nombre {
+            @apply text-3xl font-bold capitalize mb-4 flex items-center justify-center gap-2;
+  
+            .numero {
+              @apply text-gray-500 text-xl;
+            }
+          }
+  
+          .contenedor-imagen {
+            @apply mb-4;
+  
+            .imagen-pokemon {
+              @apply w-64 h-64 object-contain mx-auto;
+            }
+          }
+  
+          .tipos {
+            @apply flex justify-center gap-2 mb-4;
+          }
+        }
+  
+        .detalles {
+          @apply p-6 border-b border-gray-200;
+  
+          .medidas {
+            @apply flex justify-center gap-8 mb-4;
+  
+            .medida {
+              @apply text-center;
+  
+              .etiqueta {
+                @apply block text-sm text-gray-600;
+              }
+  
+              .valor {
+                @apply text-lg font-medium;
+              }
+            }
+          }
+  
+          .descripcion {
+            @apply text-gray-700 text-center leading-relaxed;
+          }
+        }
+  
+        .estadisticas, .evoluciones {
+          @apply p-6 border-b border-gray-200;
+  
+          .subtitulo {
+            @apply text-xl font-semibold mb-4;
+          }
+        }
+      }
+    }
+  }
