@@ -1,0 +1,46 @@
+<div class="vista-equipo">
+    <div class="encabezado">
+      <button @click="navegarAInicio" class="boton-regresar">
+        ← Volver
+      </button>
+      <h1 class="titulo">Mi Equipo Pokémon</h1>
+    </div>
+  
+    <div v-if="mensajeAccion" class="mensaje-flotante" role="alert">
+      {{ mensajeAccion }}
+    </div>
+  
+    <div class="contenido-principal">
+      <template v-if="almacen.equipoPokemon.length === 0">
+        <div class="equipo-vacio">
+          <h2 class="subtitulo">No tienes ningún Pokémon en tu equipo</h2>
+          <p class="descripcion">
+            Regresa al inicio y selecciona hasta {{ almacen.LIMITE_EQUIPO }} Pokémon para formar tu equipo.
+          </p>
+          <button @click="navegarAInicio" class="boton-accion">
+            Seleccionar Pokémon
+          </button>
+        </div>
+      </template>
+  
+      <template v-else>
+        <div class="info-equipo">
+          <p class="contador">
+            {{ almacen.equipoPokemon.length }}/{{ almacen.LIMITE_EQUIPO }} Pokémon en el equipo
+          </p>
+          <button 
+            v-if="hayEspacioDisponible()"
+            @click="navegarAInicio" 
+            class="boton-agregar"
+          >
+            Agregar más Pokémon
+          </button>
+        </div>
+  
+        <EquipoPokemon
+          :pokemon-list="almacen.equipoPokemon"
+          @eliminar="manejarEliminacion"
+        />
+      </template>
+    </div>
+  </div>
