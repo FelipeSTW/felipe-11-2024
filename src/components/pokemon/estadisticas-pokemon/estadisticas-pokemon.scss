@@ -1,0 +1,43 @@
+.estadisticas-contenedor {
+    @apply space-y-4 w-full max-w-md mx-auto p-4;
+  
+    .estadistica-item {
+      @apply space-y-1;
+  
+      .estadistica-info {
+        @apply flex justify-between text-sm;
+  
+        .estadistica-nombre {
+          @apply font-medium;
+        }
+  
+        .estadistica-valor {
+          @apply font-bold;
+        }
+      }
+  
+      .barra-contenedor {
+        @apply w-full bg-gray-200 rounded-full h-2.5;
+  
+        .barra-progreso {
+          @apply h-full rounded-full transition-all duration-300;
+  
+          &.bajo {
+            @apply bg-red-500;
+          }
+  
+          &.medio {
+            @apply bg-yellow-500;
+          }
+  
+          &.alto {
+            @apply bg-green-500;
+          }
+  
+          &.muy-alto {
+            @apply bg-blue-500;
+          }
+        }
+      }
+    }
+  }
