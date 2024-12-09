@@ -1,0 +1,83 @@
+<div class="equipo-pokemon">
+    <div v-if="equipoVacio" class="equipo-vacio">
+      <h2 class="titulo">Tu equipo está vacío</h2>
+      <p class="descripcion">
+        Regresa al inicio y selecciona hasta {{ almacen.LIMITE_EQUIPO }} Pokémon para tu equipo
+      </p>
+      <router-link to="/" class="boton-regresar">
+        Ir al inicio
+      </router-link>
+    </div>
+  
+    <template v-else>
+      <div class="encabezado-equipo">
+        <h1 class="titulo">Tu Equipo Pokémon</h1>
+        <span class="contador">
+          {{ equipo.length }}/{{ almacen.LIMITE_EQUIPO }}
+        </span>
+      </div>
+  
+      <div class="estadisticas-equipo">
+        <div class="distribucion-tipos">
+          <h3 class="subtitulo">Distribución de Tipos</h3>
+          <div class="tipos-grid">
+            <div 
+              v-for="(cantidad, tipo) in obtenerDistribucionTipos" 
+              :key="tipo"
+              class="tipo-item"
+            >
+              <span class="tipo-badge" :class="tipo">{{ tipo }}</span>
+              <span class="cantidad">x{{ cantidad }}</span>
+            </div>
+          </div>
+        </div>
+  
+        <div class="promedio-estadisticas">
+          <h3 class="subtitulo">Promedio de Estadísticas</h3>
+          <EstadisticasPokemon :estadisticas="obtenerPromedioEstadisticas" />
+        </div>
+      </div>
+  
+      <div class="lista-equipo">
+        <div 
+          v-for="pokemon in equipo" 
+          :key="pokemon.id"
+          class="pokemon-equipo"
+        >
+          <div 
+            class="contenido-pokemon"
+            @click="verDetallePokemon(pokemon.id)"
+          >
+            <img 
+              :src="pokemon.imagenes.otros['official-artwork'].frontal_defecto"
+              :alt="pokemon.nombre"
+              class="imagen-pokemon"
+            />
+            <div class="info-pokemon">
+              <h3 class="nombre-pokemon">{{ pokemon.nombre }}</h3>
+              <div class="tipos-pokemon">
+                <span 
+                  v-for="tipo in pokemon.tipos" 
+                  :key="tipo.tipo.nombre"
+                  class="tipo-badge"
+                  :class="tipo.tipo.nombre"
+                >
+                  {{ tipo.tipo.nombre }}
+                </span>
+              </div>
+              <ReproductorSonido
+                :url-sonido="pokemon.sonidos.ultimo"
+                :nombre-pokemon="pokemon.nombre"
+              />
+            </div>
+          </div>
+          <button 
+            @click="eliminarDelEquipo(pokemon.id)"
+            class="boton-eliminar"
+          >
+            Eliminar del equipo
+          </button>
+        </div>
+      </div>
+    </template>
+  </div>
