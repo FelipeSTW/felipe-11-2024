@@ -1,0 +1,36 @@
+<div class="cadena-evolutiva">
+    <div v-if="error" class="error-mensaje">
+      {{ error }}
+    </div>
+  
+    <div v-else-if="cargando" class="cargando">
+      Cargando evoluciones...
+    </div>
+  
+    <div v-else class="evoluciones-contenedor">
+      <div 
+        v-for="(etapa, index) in evoluciones" 
+        :key="index"
+        class="etapa-evolucion"
+      >
+        <div 
+          v-for="(pokemon, pokemonIndex) in etapa" 
+          :key="pokemon.nombre"
+          class="pokemon-evolucion"
+        >
+          <img 
+            :src="pokemon.imagen" 
+            :alt="pokemon.nombre"
+            class="imagen-evolucion"
+          />
+          <span class="nombre-evolucion">{{ pokemon.nombre }}</span>
+        </div>
+        <div 
+          v-if="index < evoluciones.length - 1" 
+          class="flecha-evolucion"
+        >
+          →
+        </div>
+      </div>
+    </div>
+  </div>
