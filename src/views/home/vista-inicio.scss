@@ -1,0 +1,41 @@
+.vista-inicio {
+    @apply min-h-screen bg-gray-50;
+  
+    .encabezado {
+      @apply bg-white shadow-md py-4 px-6 mb-6 flex justify-between items-center;
+  
+      .titulo {
+        @apply text-2xl font-bold text-gray-800;
+      }
+  
+      .info-equipo {
+        .enlace-equipo {
+          @apply text-blue-600 hover:text-blue-800 transition-colors duration-200;
+        }
+      }
+    }
+  
+    .mensaje-flotante {
+      @apply fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg
+             shadow-lg z-50 animate-fadeIn;
+    }
+  
+    .contenido-principal {
+      @apply container mx-auto px-4;
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fadeIn {
+    animation: fadeIn 0.3s ease-out;
+  }

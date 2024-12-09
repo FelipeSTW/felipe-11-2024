@@ -1,0 +1,18 @@
+<div class="vista-inicio">
+    <div class="encabezado">
+      <h1 class="titulo">Pokédex</h1>
+      <div class="info-equipo">
+        <router-link to="/equipo" class="enlace-equipo">
+          Ver mi equipo ({{ almacen.equipoPokemon.length }}/{{ almacen.LIMITE_EQUIPO }})
+        </router-link>
+      </div>
+    </div>
+  
+    <div v-if="mensajeSeleccion" class="mensaje-flotante" role="alert">
+      {{ mensajeSeleccion }}
+    </div>
+  
+    <div class="contenido-principal">
+      <ListaPokemon @seleccionar="manejarSeleccionPokemon" />
+    </div>
+  </div>
