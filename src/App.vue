@@ -3,11 +3,5 @@ import LayoutPrincipal from '@/components/layout/layout-principal/LayoutPrincipa
 </script>
 
 <template>
-  <LayoutPrincipal>
-    <router-view v-slot="{ Component }">
-      <transition name="fade" mode="out-in">
-        <component :is="Component" />
-      </transition>
-    </router-view>
-  </LayoutPrincipal>
+  <LayoutPrincipal />
 </template>
