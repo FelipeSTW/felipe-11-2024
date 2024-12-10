@@ -4,7 +4,7 @@
   </div>
 
   <div class="contenido-principal">
-    <div v-if="error" class="error-mensaje">{{ error }}</div>
+    <div v-if="error" class="error-mensaje">{{ error }}. Por favor, intenta nuevamente o verifica tu conexión a internet.</div>
     <div v-else-if="cargando" class="cargando">Cargando...</div>
     <template v-else>
       <DetallePokemon 

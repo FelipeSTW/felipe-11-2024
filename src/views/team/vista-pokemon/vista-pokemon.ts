@@ -16,6 +16,7 @@ export const useVistaPokemon = () => {
 
   const cargarDatosPokemon = async () => {
     try {
+      
       cargando.value = true
       const id = route.params.id as string
       const pokemonEquipo = almacen.equipoPokemon.find(p => p.id.toString() === id)
@@ -27,6 +28,8 @@ export const useVistaPokemon = () => {
         obtenerDetallePokemon(id),
         obtenerEspecie(id)
       ])
+
+      console.log("URL de la cadena evolutiva:", especieResp.datos?.evolution_chain.url);
 
       if (pokemonResp.error || especieResp.error) {
         throw new Error('Error al obtener los datos del Pokémon')
