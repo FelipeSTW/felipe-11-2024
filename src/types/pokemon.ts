@@ -1,9 +1,12 @@
 
 export interface RespuestaListaPokemon {
-  total: number
-  siguiente: string | null
-  anterior: string | null
-  resultados: PokemonBasico[]
+  count: number
+  next: string | null
+  previous: string | null
+  results: {
+    name: string
+    url: string
+  }[]
 }
 
 export interface PokemonBasico {
@@ -13,16 +16,34 @@ export interface PokemonBasico {
 
 export interface DetallePokemon {
   id: number
-  nombre: string
-  altura: number
-  peso: number
-  tipos: TipoPokemon[]
-  estadisticas: EstadisticaPokemon[]
-  imagenes: ImagenesPokemon
-  sonidos: SonidosPokemon
-  especie: {
-    url: string
+  name: string  
+  nombre?: string 
+  height: number
+  weight: number
+  abilities: any[]
+  sprites: {
+    front_default: string
+    other: {
+      'official-artwork': {
+        front_default: string
+      }
+    }
   }
+  types: {
+    slot: number
+    type: {
+      name: string
+      url: string
+    }
+  }[]
+  stats: {
+    base_stat: number
+    effort: number
+    stat: {
+      name: string
+      url: string
+    }
+  }[]
 }
 
 export interface TipoPokemon {

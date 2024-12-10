@@ -15,20 +15,25 @@ export const useListaPokemon = () => {
       const inicio = pagina.value * LIMITE_POR_PAGINA
       const { datos, error: listError } = await obtenerListaPokemon(inicio, LIMITE_POR_PAGINA)
       
-      if (listError) {
+      if (listError || !datos) {
         throw new Error('Error al obtener la lista de Pokémon')
       }
-
+  
       const detallesPokemon = await Promise.all(
-        datos!.resultados.map(async (pokemon) => {
+        datos.results.map(async (pokemon) => {
           const id = pokemon.url.split('/').filter(Boolean).pop()
           const { datos: detalle, error: detalleError } = await obtenerDetallePokemon(id!)
-          if (detalleError) throw new Error(`Error al obtener detalles de ${pokemon.nombre}`)
-          return detalle!
+          if (detalleError || !detalle) {
+            throw new Error(`Error al obtener detalles de ${pokemon.name}`)
+          }
+          return detalle
         })
       )
-
-      pokemonList.value = detallesPokemon
+  
+      pokemonList.value = pagina.value === 0 
+        ? detallesPokemon 
+        : [...pokemonList.value, ...detallesPokemon]
+        
       error.value = null
     } catch (e) {
       error.value = e instanceof Error ? e.message : 'Error desconocido'
