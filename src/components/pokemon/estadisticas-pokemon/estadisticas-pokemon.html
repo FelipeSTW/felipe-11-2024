@@ -1,19 +1,21 @@
 <div class="estadisticas-contenedor">
-    <div 
-      v-for="stat in estadisticasFormateadas" 
-      :key="stat.nombre"
-      class="estadistica-item"
-    >
-      <div class="estadistica-info">
-        <span class="estadistica-nombre">{{ stat.nombre }}</span>
-        <span class="estadistica-valor">{{ stat.valor }}</span>
-      </div>
-      <div class="barra-contenedor">
-        <div 
-          class="barra-progreso"
-          :style="{ width: `${stat.porcentaje}%` }"
-          :class="obtenerClaseColor(stat.valor)"
-        ></div>
-      </div>
+  <div 
+    v-for="stat in estadisticas" 
+    :key="stat.stat.name"
+    class="estadistica-item"
+  >
+    <div class="estadistica-info">
+      <span class="estadistica-nombre">{{ stat.stat.name }}</span>
+      <span class="estadistica-valor">{{ stat.base_stat }}</span>
+    </div>
+    <div class="barra-contenedor">
+      <div 
+        class="barra-progreso"
+        :style="{ width: `${(stat.base_stat / 255) * 100}%` }"
+        :class="obtenerClaseColor(stat.base_stat)"
+      ></div>
     </div>
   </div>
+</div>
+
+

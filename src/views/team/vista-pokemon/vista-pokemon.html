@@ -24,26 +24,28 @@
   
             <div class="contenedor-imagen">
               <img 
-                :src="pokemon.imagenes.otros['official-artwork'].frontal_defecto"
+                v-if="pokemon && pokemon.imagenes && pokemon.imagenes.other['official-artwork']"
+                :src="pokemon.imagenes.other['official-artwork'].frontal_defecto"
                 :alt="pokemon.nombre"
                 class="imagen-pokemon"
               />
+              <p v-else>Cargando imagen...</p>
             </div>
   
             <div class="tipos">
               <span 
-                v-for="tipo in pokemon.tipos" 
-                :key="tipo.tipo.nombre"
+                v-for="type in pokemon.types" 
+                :key="type.type.name"
                 class="tipo-badge"
-                :class="tipo.tipo.nombre"
+                :class="type.type.name"
               >
-                {{ tipo.tipo.nombre }}
+                {{ type.type.name }}
               </span>
             </div>
   
             <ReproductorSonido
-              :url-sonido="pokemon.sonidos.ultimo"
-              :nombre-pokemon="pokemon.nombre"
+              :url-sonido="pokemon.cries.latest"
+              :nombre-pokemon="pokemon.name"
             />
           </div>
   
@@ -60,13 +62,14 @@
             </div>
   
             <div class="descripcion">
-              {{ obtenerDescripcionEspanol() }}
+              <p v-if="obtenerDescripcionEspanol()">{{ obtenerDescripcionEspanol() }}</p>
+              <p v-else>Descripción no disponible.</p>
             </div>
           </div>
   
           <div class="estadisticas">
             <h2 class="subtitulo">Estadísticas base</h2>
-            <EstadisticasPokemon :estadisticas="pokemon.estadisticas" />
+            <EstadisticasPokemon  v-if="pokemon && pokemon.stats" :estadisticas="pokemon.stats"  />
           </div>
   
           <div class="evoluciones" v-if="cadenaEvolutiva">

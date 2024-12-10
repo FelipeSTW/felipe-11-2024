@@ -2,7 +2,8 @@
 import { useEstadisticasPokemon, type EstadisticasPokemonProps } from './estadisticas-pokemon'
 
 const props = defineProps<EstadisticasPokemonProps>()
-const { estadisticasFormateadas } = useEstadisticasPokemon(props)
+const estadisticas = props.estadisticas || [] // Valor predeterminado si estadisticas es undefined
+const { estadisticasFormateadas } = useEstadisticasPokemon({ estadisticas })
 
 const obtenerClaseColor = (valor: number): string => {
   if (valor < 50) return 'bajo'

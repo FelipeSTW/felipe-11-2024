@@ -14,12 +14,12 @@ export const useDetallePokemon = (props: DetallePokemonProps) => {
 
   const obtenerDescripcion = () => {
     if (!especie.value) return ''
-    
-    const descripcionEsp = especie.value.entradas_texto.find(
-      entrada => entrada.idioma.nombre === 'es'
+  
+    const descripcionEsp = especie.value.flavor_text_entries.find(
+      entrada => entrada.language.name === 'es'
     )
-    
-    return descripcionEsp?.texto || ''
+  
+    return descripcionEsp?.flavor_text || ''
   }
 
   const obtenerDatos = async () => {

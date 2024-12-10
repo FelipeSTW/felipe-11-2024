@@ -1,68 +1,67 @@
 <div class="detalle-pokemon">
-    <div v-if="error" class="error-mensaje">
-      {{ error }}
-    </div>
-  
-    <div v-else-if="cargando" class="cargando">
-      Cargando información del Pokémon...
-    </div>
-  
-    <template v-else-if="pokemon">
-      <div class="encabezado">
-        <h1 class="titulo">
-          {{ pokemon.nombre }}
-          <span class="numero">#{{ pokemon.id.toString().padStart(3, '0') }}</span>
-        </h1>
-        <ReproductorSonido
-          :url-sonido="pokemon.sonidos.ultimo"
-          :nombre-pokemon="pokemon.nombre"
-        />
-      </div>
-  
-      <div class="contenido-principal">
-        <div class="imagen-contenedor">
-          <img 
-            :src="pokemon.imagenes.otros['official-artwork'].frontal_defecto"
-            :alt="pokemon.nombre"
-            class="imagen-pokemon"
-          />
-        </div>
-  
-        <div class="info-contenedor">
-          <div class="tipos">
-            <span 
-              v-for="tipo in pokemon.tipos" 
-              :key="tipo.tipo.nombre"
-              class="tipo-badge"
-              :class="tipo.tipo.nombre"
-            >
-              {{ tipo.tipo.nombre }}
-            </span>
-          </div>
-  
-          <div class="medidas">
-            <div class="medida">
-              <span class="etiqueta">Altura</span>
-              <span class="valor">{{ pokemon.altura / 10 }}m</span>
-            </div>
-            <div class="medida">
-              <span class="etiqueta">Peso</span>
-              <span class="valor">{{ pokemon.peso / 10 }}kg</span>
-            </div>
-          </div>
-  
-          <p class="descripcion">{{ obtenerDescripcion() }}</p>
-  
-          <EstadisticasPokemon :estadisticas="pokemon.estadisticas" />
-        </div>
-      </div>
-  
-      <div class="seccion-evoluciones">
-        <h2 class="subtitulo">Cadena evolutiva</h2>
-        <CadenaEvolutiva 
-          v-if="especie"
-          :url-cadena-evolutiva="especie.evolution_chain.url"
-        />
-      </div>
-    </template>
+  <div v-if="error" class="error-mensaje">
+    {{ error }}
   </div>
+
+  <div v-else-if="cargando" class="cargando">
+    Cargando información del Pokémon...
+  </div>
+
+  <template v-else-if="pokemon">
+    <div class="encabezado">
+      <h1 class="titulo">
+        {{ pokemon.name }}
+        <span class="numero">#{{ pokemon.id.toString().padStart(3, '0') }}</span>
+      </h1>
+      <ReproductorSonido
+        :url-sonido="pokemon.cries.latest"
+        :nombre-pokemon="pokemon.name"
+      />
+    </div>
+
+    <div class="contenido-principal">
+      <div class="imagen-contenedor">
+        <img 
+          :src="pokemon.sprites.other['official-artwork'].front_default"
+          :alt="pokemon.name"
+          class="imagen-pokemon"
+        />
+      </div>
+
+      <div class="info-contenedor">
+        <div class="tipos">
+          <span 
+            v-for="type in pokemon.types" 
+            :key="type.type.name"
+            class="tipo-badge"
+            :class="type.type.name"
+          >
+            {{ type.type.name }}
+          </span>
+        </div>
+
+        <div class="medidas">
+          <div class="medida">
+            <span class="etiqueta">Altura</span>
+            <span class="valor">{{ pokemon.height / 10 }}m</span>
+          </div>
+          <div class="medida">
+            <span class="etiqueta">Peso</span>
+            <span class="valor">{{ pokemon.weight / 10 }}kg</span>
+          </div>
+        </div>
+
+        <p class="descripcion">{{ obtenerDescripcion() }}</p>
+
+        <EstadisticasPokemon  v-if="pokemon && pokemon.stats" :estadisticas="pokemon.stats" />
+      </div>
+    </div>
+
+    <div class="seccion-evoluciones">
+      <h2 class="subtitulo">Cadena evolutiva</h2>
+      <CadenaEvolutiva 
+      v-if="especie && especie.evolution_chain" :url-cadena-evolutiva="especie.evolution_chain.url" 
+      />
+    </div>
+  </template>
+</div>

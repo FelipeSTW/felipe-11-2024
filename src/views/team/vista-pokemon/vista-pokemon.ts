@@ -34,8 +34,13 @@ export const useVistaPokemon = () => {
       if (pokemonResp.error || especieResp.error) {
         throw new Error('Error al obtener los datos del Pokémon')
       }
-
-      pokemon.value = pokemonResp.datos!
+      console.log('Detalle del Pokémon:', pokemonResp.datos)
+      pokemon.value = {
+        ...pokemonResp.datos!,
+        imagenes: pokemonResp.datos!.sprites || { otros: { 'official-artwork': { frontal_defecto: '' } } },
+        cries: pokemonResp.datos!.cries || { latest: '', legacy: '' },
+        estadisticas: pokemonResp.datos!.stats || []
+      }
       especie.value = especieResp.datos!
 
       // Obtener cadena evolutiva
@@ -60,14 +65,16 @@ export const useVistaPokemon = () => {
   }
 
   const obtenerDescripcionEspanol = () => {
-    if (!especie.value) return ''
-    
-    const descripcionEsp = especie.value.entradas_texto.find(
-      entrada => entrada.idioma.nombre === 'es'
-    )
-    
-    return descripcionEsp?.texto || ''
-  }
+    if (!especie.value || !Array.isArray(especie.value.flavor_text_entries)) {
+      return ''; // Retorna un string vacío si la propiedad no existe.
+    }
+  
+    const descripcionEsp = especie.value.flavor_text_entries.find(
+      entrada => entrada.language.name === 'es'
+    );
+  
+    return descripcionEsp?.flavor_text || 'Descripción no disponible.';
+  };
 
   onMounted(cargarDatosPokemon)
 

@@ -9,12 +9,12 @@ const rutas: RouteRecordRaw[] = [
   {
     path: '/equipo',
     name: 'equipo',
-    component: () => import('../views/team/VistaEquipo.vue')
+    component: () => import('../views/team/equipo/VistaEquipo.vue')
   },
   {
     path: '/equipo/:id',
     name: 'detallePokemon',
-    component: () => import('../views/team/VistaPokemon.vue')
+    component: () => import('../views/team/vista-pokemon/VistaPokemon.vue')
   }
 ]
 

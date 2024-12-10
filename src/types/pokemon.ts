@@ -55,12 +55,12 @@ export interface TipoPokemon {
 }
 
 export interface EstadisticaPokemon {
-  valor_base: number
-  esfuerzo: number
-  estadistica: {
-    nombre: string
-    url: string
-  }
+  base_stat: number;
+  effort: number;
+  stat: {
+    name: string; // Nombre de la estadística en inglés
+    url: string;  // URL del recurso
+  };
 }
 
 export interface ImagenesPokemon {
@@ -89,12 +89,15 @@ export interface CadenaEvolutiva {
 }
 
 export interface EspeciePokemon {
-  entradas_texto: Array<{
-    texto: string
-    idioma: {
-      nombre: string
+  flavor_text_entries: Array<{
+    flavor_text: string
+    language: {
+      name: string
     }
   }>
+  evolution_chain: {
+    url: string
+  }
 }
 
 export interface PokemonEquipo extends DetallePokemon {
