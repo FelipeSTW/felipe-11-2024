@@ -1,17 +1,14 @@
 <script setup lang="ts">
 import { useVistaPokemon } from './vista-pokemon'
-import ReproductorSonido from '@/components/pokemon/reproductor-sonido/ReproductorSonido.vue'
-import EstadisticasPokemon from '@/components/pokemon/estadisticas-pokemon/EstadisticasPokemon.vue'
-import CadenaEvolutiva from '@/components/pokemon/cadena-evolutiva/CadenaEvolutiva.vue'
+import DetallePokemon from '@/components/pokemon/detalle-pokemon/DetallePokemon.vue'
 
-const {
-  pokemon,
-  especie,
-  cadenaEvolutiva,
-  cargando,
-  error,
-  navegarAEquipo,
-  obtenerDescripcionEspanol
+const { 
+  pokemon, 
+  especie, 
+  cargando, 
+  error, 
+  navegarAEquipo, 
+  obtenerDescripcionEspanol 
 } = useVistaPokemon()
 </script>
 
