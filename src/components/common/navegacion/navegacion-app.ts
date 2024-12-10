@@ -1,12 +1,15 @@
 import { useRoute } from 'vue-router'
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
+import pokeball from '@/assets/pokeball.svg'
 
 export const useNavegacionApp = () => {
   const route = useRoute()
+  const logoUrl = ref(pokeball)
 
   const esPaginaInicio = computed(() => route.path === '/')
 
   return {
-    esPaginaInicio
+    esPaginaInicio,
+    logoUrl
   }
 }
