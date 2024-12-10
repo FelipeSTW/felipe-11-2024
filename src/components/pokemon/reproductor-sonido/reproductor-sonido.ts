@@ -1,5 +1,5 @@
 import { ref } from 'vue'
-import { Volume2, VolumeX } from 'lucide-react'
+import { Volume2, VolumeX } from 'lucide-vue-next'
 
 export interface ReproductorSonidoProps {
   urlSonido: string
