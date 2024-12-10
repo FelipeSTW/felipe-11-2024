@@ -48,7 +48,6 @@
             </div>
             <!-- Reproductor de sonido -->
             <ReproductorSonido
-              v-if="pokemon.cries?.latest"
               :url-sonido="pokemon.cries.latest"
               :nombre-pokemon="pokemon.name"
             />

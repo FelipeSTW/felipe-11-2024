@@ -1,14 +1,15 @@
 <script setup lang="ts">
-import { useReproductorSonido, type ReproductorSonidoProps } from './reproductor-sonido'
+import { useReproductorSonido, type ReproductorSonidoProps } from './reproductor-sonido';
 
-const props = defineProps<ReproductorSonidoProps>()
-const { 
-  reproduciendo, 
-  reproducirSonido, 
+const props = defineProps<ReproductorSonidoProps>();
+const {
+  audio,
+  reproduciendo,
+  reproducirSonido,
   onAudioEnd,
   Volume2,
-  VolumeX 
-} = useReproductorSonido()
+  VolumeX,
+} = useReproductorSonido(props);
 </script>
 
 <template src="./reproductor-sonido.html"></template>

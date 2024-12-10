@@ -1,18 +1,18 @@
 <div class="reproductor-sonido">
-    <button
-      class="boton-reproducir"
-      @click="reproducirSonido"
-      :aria-label="reproduciendo ? 'Detener sonido' : 'Reproducir sonido'"
-    >
-      <Component
-        :is="reproduciendo ? Volume2 : VolumeX"
-        class="icono-sonido"
-      />
-    </button>
-    <audio
-      :src="urlSonido"
-      :ref="el => audio = el"
-      @ended="onAudioEnd"
-      :aria-label="`Sonido de ${nombrePokemon}`"
-    ></audio>
-  </div>
+  <button
+    class="boton-reproducir"
+    @click="reproducirSonido"
+    :aria-label="reproduciendo ? 'Detener sonido' : 'Reproducir sonido'"
+  >
+    <Component
+      :is="reproduciendo ? Volume2 : VolumeX"
+      class="icono-sonido"
+    />
+  </button>
+  <audio
+    ref="audio"
+    :src="urlSonido"
+    @ended="onAudioEnd"
+    :aria-label="`Sonido de ${nombrePokemon}`"
+  ></audio>
+</div>
