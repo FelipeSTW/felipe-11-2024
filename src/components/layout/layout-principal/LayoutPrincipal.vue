@@ -1,8 +1,6 @@
 <script setup lang="ts">
-import { useLayoutPrincipal } from './layout-principal'
+import { RouterView } from 'vue-router'
 import NavegacionApp from '@/components/common/navegacion/NavegacionApp.vue'
-
-const {} = useLayoutPrincipal()
 </script>
 
 <template src="./layout-principal.html"></template>
