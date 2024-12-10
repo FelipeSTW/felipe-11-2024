@@ -26,8 +26,8 @@ export const useEquipoPokemon = () => {
     const distribucion: Record<string, number> = {}
     
     equipo.value.forEach(pokemon => {
-      pokemon.tipos.forEach(({ tipo }) => {
-        distribucion[tipo.nombre] = (distribucion[tipo.nombre] || 0) + 1
+      pokemon.types.forEach(({ type }) => {
+        distribucion[type.name] = (distribucion[type.name] || 0) + 1
       })
     })
 
@@ -40,9 +40,9 @@ export const useEquipoPokemon = () => {
     const totalEstadisticas: Record<string, number> = {}
     
     equipo.value.forEach(pokemon => {
-      pokemon.estadisticas.forEach(stat => {
-        const nombreStat = stat.estadistica.nombre
-        totalEstadisticas[nombreStat] = (totalEstadisticas[nombreStat] || 0) + stat.valor_base
+      pokemon.stats.forEach(stat => {
+        const nombreStat = stat.stat.name
+        totalEstadisticas[nombreStat] = (totalEstadisticas[nombreStat] || 0) + stat.base_stat
       })
     })
 
@@ -59,6 +59,6 @@ export const useEquipoPokemon = () => {
     eliminarDelEquipo,
     verDetallePokemon,
     obtenerDistribucionTipos,
-    obtenerPromedioEstadisticas
+    obtenerPromedioEstadisticas,
   }
 }

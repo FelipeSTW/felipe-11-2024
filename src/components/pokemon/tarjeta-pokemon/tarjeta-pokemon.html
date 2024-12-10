@@ -8,11 +8,11 @@ class="tarjeta-pokemon"
 >
 <img 
   :src="pokemon.sprites.other['official-artwork'].front_default" 
-  :alt="pokemon.nombre"
+  :alt="pokemon.name"
   class="imagen-pokemon"
 />
 <div class="info-pokemon">
-  <h3 class="nombre-pokemon">{{ pokemon.nombre }}</h3>
+  <h3 class="nombre-pokemon">{{ pokemon.name }}</h3>
   <div class="tipos-pokemon">
     <span 
       v-for="tipo in pokemon.types" 

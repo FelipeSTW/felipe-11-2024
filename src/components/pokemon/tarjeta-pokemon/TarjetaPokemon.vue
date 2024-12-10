@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useTarjetaPokemon, type TarjetaPokemonProps } from './tarjeta-pokemon'
+import type { DetallePokemon } from '@/types/pokemon'
 
 const props = defineProps<TarjetaPokemonProps>()
 const emit = defineEmits<{

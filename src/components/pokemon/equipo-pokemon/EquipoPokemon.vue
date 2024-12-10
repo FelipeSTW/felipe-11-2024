@@ -1,10 +1,15 @@
 <script setup lang="ts">
-import { useAlmacenPokemon } from '@/stores/almacenPokemon'
 import ReproductorSonido from '../reproductor-sonido/ReproductorSonido.vue'
-import EstadisticasPokemon from '../estadisticas-pokemon/EstadisticasPokemon.vue'
+import { useEquipoPokemon } from './equipo-pokemon'
 import type { DetallePokemon } from '@/types/pokemon'
 
-const almacen = useAlmacenPokemon()
+const { 
+  equipo, 
+  equipoVacio, 
+  espaciosDisponibles, 
+  eliminarDelEquipo, 
+  verDetallePokemon  
+} = useEquipoPokemon()
 
 defineProps<{
   pokemonList: DetallePokemon[]
@@ -15,9 +20,11 @@ const emit = defineEmits<{
 }>()
 
 function manejarEliminacion(pokemon: DetallePokemon) {
+  eliminarDelEquipo(pokemon.id)
   emit('eliminar', pokemon)
 }
-</script>
+</script>>
 
 <template src="./equipo-pokemon.html"></template>
 <style src="./equipo-pokemon.scss" lang="scss" scoped></style>
+
