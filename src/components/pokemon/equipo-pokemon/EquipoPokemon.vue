@@ -2,6 +2,7 @@
 import ReproductorSonido from '../reproductor-sonido/ReproductorSonido.vue'
 import { useEquipoPokemon } from './equipo-pokemon'
 import type { DetallePokemon } from '@/types/pokemon'
+import EstadisticasPokemon from '../estadisticas-pokemon/EstadisticasPokemon.vue';
 
 const { 
   equipo, 

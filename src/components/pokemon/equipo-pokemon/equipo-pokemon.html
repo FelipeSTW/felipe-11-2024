@@ -23,31 +23,42 @@
         :key="pokemon.id"
         class="pokemon-equipo"
       >
-      <div class="contenido-pokemon"  @click="verDetallePokemon(pokemon.id)">
-        <img 
-          :src="pokemon.sprites.other['official-artwork'].front_default"
-          :alt="pokemon.nombre"
-          class="imagen-pokemon"
-        />
-        <div class="info-pokemon">
-          <h3 class="nombre-pokemon">{{ pokemon.name }}</h3>
-          <div class="tipos-pokemon">
-            <span 
-              v-for="tipo in pokemon.types" 
-              :key="tipo.slot"
-              class="tipo-badge"
-              :class="tipo.type.name"
-            >
-              {{ tipo.type.name }}
-            </span>
-          </div>
-          <ReproductorSonido
-            v-if="pokemon.cries?.latest"
-            :url-sonido="pokemon.cries.latest"
-            :nombre-pokemon="pokemon.name"
+        <div class="contenido-pokemon">
+          <!-- Imagen con clic -->
+          <img 
+            :src="pokemon.sprites.other['official-artwork'].front_default"
+            :alt="pokemon.nombre"
+            class="imagen-pokemon"
+            @click="verDetallePokemon(pokemon.id)"
           />
+          <div class="info-pokemon">
+            <!-- Nombre con clic -->
+            <h3 class="nombre-pokemon" @click="verDetallePokemon(pokemon.id)">
+              {{ pokemon.name }}
+            </h3>
+            <div class="tipos-pokemon">
+              <span 
+                v-for="tipo in pokemon.types" 
+                :key="tipo.slot"
+                class="tipo-badge"
+                :class="tipo.type.name"
+              >
+                {{ tipo.type.name }}
+              </span>
+            </div>
+            <!-- Reproductor de sonido -->
+            <ReproductorSonido
+              v-if="pokemon.cries?.latest"
+              :url-sonido="pokemon.cries.latest"
+              :nombre-pokemon="pokemon.name"
+            />
+            <!-- Gráfico de estadísticas -->
+            <EstadisticasPokemon 
+              v-if="pokemon.stats" 
+              :estadisticas="pokemon.stats" 
+            />
+          </div>
         </div>
-      </div>
         <button 
           @click="manejarEliminacion(pokemon)"
           class="boton-eliminar"
