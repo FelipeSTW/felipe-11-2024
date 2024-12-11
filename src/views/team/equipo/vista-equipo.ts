@@ -17,7 +17,7 @@ export const useVistaEquipo = () => {
 
   const manejarEliminacion = (pokemon: DetallePokemon) => {
     almacen.eliminarDeEquipo(pokemon.id)
-    mostrarMensaje(`${pokemon.nombre} ha sido eliminado del equipo`)
+    mostrarMensaje(`${pokemon.name} ha sido eliminado del equipo`)
   }
 
   const navegarAInicio = () => {
