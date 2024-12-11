@@ -77,7 +77,7 @@ export interface SonidosPokemon {
 }
 
 export interface RespuestaCadenaEvolutiva {
-  cadena: CadenaEvolutiva
+  chain: CadenaEvolutiva
 }
 
 export interface CadenaEvolutiva {
