@@ -1,5 +1,5 @@
 .lista-pokemon {
-    @apply w-full p-4;
+    @apply w-full p-4 box-border;
   
     .error-mensaje {
       @apply text-red-500 text-center p-4 bg-red-100 rounded-lg;
