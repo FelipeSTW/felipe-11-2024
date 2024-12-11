@@ -28,7 +28,7 @@
         @apply flex justify-center items-center;
   
         .imagen-pokemon {
-          @apply w-full max-w-md;
+          @apply w-full max-w-md block;
         }
       }
   

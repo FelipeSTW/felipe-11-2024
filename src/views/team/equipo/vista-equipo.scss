@@ -20,7 +20,7 @@
     }
   
     .contenido-principal {
-      @apply container mx-auto px-4;
+      @apply container mx-auto px-4 box-border;
   
       .equipo-vacio {
         @apply text-center py-12 bg-white rounded-lg shadow-md;
@@ -47,8 +47,8 @@
         }
   
         .boton-agregar {
-          @apply px-4 py-2 bg-green-500 text-white rounded-lg
-                 hover:bg-green-600 transition-colors duration-200;
+          @apply px-4 py-2 bg-green-600 text-white rounded-lg border-0 cursor-pointer
+                 hover:bg-green-700 transition-colors duration-200;
         }
       }
     }

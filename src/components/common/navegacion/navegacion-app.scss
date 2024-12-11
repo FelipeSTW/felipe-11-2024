@@ -2,7 +2,7 @@
     @apply bg-white shadow-md sticky top-0 z-50;
   
     .contenedor-nav {
-      @apply container mx-auto px-4 py-3 flex justify-between items-center;
+      @apply container mx-auto px-4 py-3 flex justify-between items-center box-border;
   
       .logo {
         @apply flex items-center gap-2 text-gray-800 hover:text-gray-600 

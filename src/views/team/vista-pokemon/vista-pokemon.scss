@@ -43,7 +43,7 @@
             @apply mb-4;
   
             .imagen-pokemon {
-              @apply w-64 h-64 object-contain mx-auto;
+              @apply w-64 h-64 object-contain mx-auto block;
             }
           }
   
