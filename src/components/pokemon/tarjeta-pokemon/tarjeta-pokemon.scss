@@ -1,16 +1,18 @@
 .tarjeta-pokemon {
-  @apply rounded-lg shadow-md p-4 bg-white transition-all duration-300;
+  @apply rounded-lg shadow-md p-4 transition-all duration-300;
+  background-color: #FFCC01;
 
   &.seleccionable {
     @apply cursor-pointer hover:shadow-lg hover:scale-105;
   }
 
   &.en-equipo {
-    @apply outline outline-2 outline-blue-500;
+    @apply outline outline-2 outline-blue-500 bg-blue-500;
   }
 
   .imagen-pokemon {
-    @apply w-32 h-32 mx-auto block;
+    @apply w-32 h-32 mx-auto block bg-white;
+    border-radius: 50%;
   }
 
   .info-pokemon {

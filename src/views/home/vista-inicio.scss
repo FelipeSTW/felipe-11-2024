@@ -2,7 +2,7 @@
     @apply min-h-screen bg-gray-50;
   
     .encabezado {
-      @apply bg-white shadow-md py-4 px-6 mb-6 flex justify-between items-center;
+      @apply bg-white shadow-md py-4 px-6 mb-6 flex justify-between items-center  flex-col sm:flex-row;
   
       .titulo {
         @apply text-2xl font-bold text-gray-800;

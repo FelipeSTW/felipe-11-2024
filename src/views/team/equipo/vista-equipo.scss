@@ -2,7 +2,7 @@
     @apply min-h-screen bg-gray-50;
   
     .encabezado {
-      @apply bg-white shadow-md py-4 px-6 mb-6 flex items-center gap-4;
+      @apply bg-white shadow-md py-4 px-6 mb-6 flex items-center gap-4 flex-col sm:flex-row;
   
       .boton-regresar {
         @apply inline-block px-6 py-2 bg-green-700 text-white rounded-lg border-0 cursor-pointer
@@ -11,7 +11,7 @@
       }
   
       .titulo {
-        @apply text-2xl font-bold text-gray-800;
+        @apply text-2xl font-bold text-gray-800 text-center sm:text-left;
       }
     }
   
@@ -42,10 +42,10 @@
       }
   
       .info-equipo {
-        @apply flex justify-between items-center mb-6;
+        @apply flex justify-between items-center mb-6 flex-col sm:flex-row;
   
         .contador {
-          @apply text-lg text-gray-600;
+          @apply text-lg text-gray-600 text-center sm:text-left;
         }
   
         .boton-agregar {
