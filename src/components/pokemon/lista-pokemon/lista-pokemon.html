@@ -1,29 +1,20 @@
 <div class="lista-pokemon">
-    <div v-if="error" class="error-mensaje">
-      {{ error }}
+  <div v-if="error" class="error-mensaje">
+    {{ error }}
+  </div>
+  
+  <div v-else class="contenedor-lista">
+    <div class="grid-pokemon">
+      <TarjetaPokemon
+        v-for="pokemon in pokemonList"
+        :key="pokemon.id"
+        :pokemon="pokemon"
+        :modo-seleccion="true"
+        @seleccionar="seleccionarPokemon"
+      />
     </div>
-    
-    <div v-else class="contenedor-lista">
-      <div v-if="cargando" class="cargando">
-        Cargando Pokémon...
-      </div>
-  
-      <div v-else class="grid-pokemon">
-        <TarjetaPokemon
-          v-for="pokemon in pokemonList"
-          :key="pokemon.id"
-          :pokemon="pokemon"
-          :modo-seleccion="true"
-          @seleccionar="seleccionarPokemon"
-        />
-      </div>
-  
-      <button 
-        v-if="!cargando && pokemonList.length"
-        class="boton-cargar-mas"
-        @click="cargarSiguientePagina"
-      >
-        Cargar más Pokémon
-      </button>
+    <div v-if="cargando" class="loader">
+      Cargando más Pokémon...
     </div>
   </div>
+</div>
