@@ -9,27 +9,29 @@
       @apply text-center text-gray-600 p-4;
     }
   
-    .evoluciones-contenedor {
-      @apply flex flex-col items-center gap-4;
-  
-      .etapa-evolucion {
-        @apply flex items-center gap-4;
-  
-        .pokemon-evolucion {
-          @apply flex flex-col items-center gap-2;
-  
-          .imagen-evolucion {
-            @apply w-24 h-24 object-contain;
-          }
-  
-          .nombre-evolucion {
-            @apply text-sm font-medium capitalize;
-          }
+    
+  }
+
+  .evoluciones-contenedor {
+    @apply flex flex-row items-center gap-4;
+
+    .etapa-evolucion {
+      @apply flex items-center gap-4;
+
+      .pokemon-evolucion {
+        @apply flex flex-col items-center gap-2;
+
+        .imagen-evolucion {
+          @apply w-24 h-24 object-contain;
         }
-  
-        .flecha-evolucion {
-          @apply text-2xl text-gray-500 font-bold;
+
+        .nombre-evolucion {
+          @apply text-sm font-medium capitalize;
         }
+      }
+
+      .flecha-evolucion {
+        @apply text-2xl text-gray-500 font-bold;
       }
     }
   }

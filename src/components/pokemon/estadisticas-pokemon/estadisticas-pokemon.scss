@@ -1,5 +1,5 @@
 .estadisticas-contenedor {
-    @apply space-y-4 w-full max-w-md mx-auto p-4;
+    @apply space-y-4 w-full max-w-md mx-auto p-4 box-border;
   
     .estadistica-item {
       @apply space-y-1;
