@@ -8,7 +8,7 @@
         @apply flex justify-between text-sm;
   
         .estadistica-nombre {
-          @apply font-medium;
+          @apply font-medium text-left;
         }
   
         .estadistica-valor {

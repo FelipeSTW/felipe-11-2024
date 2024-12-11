@@ -1,5 +1,5 @@
 .equipo-pokemon {
-    @apply max-w-6xl mx-auto p-4;
+    @apply max-w-6xl mx-auto;
   
     .equipo-vacio {
       @apply text-center py-12;
@@ -15,6 +15,7 @@
       .boton-regresar {
         @apply inline-block px-6 py-2 bg-blue-500 text-white rounded-lg cursor-pointer
                hover:bg-blue-600 transition-colors duration-200;
+        font-family: 'PokemonClassic', sans-serif;
       }
     }
   
@@ -81,6 +82,7 @@
         .boton-eliminar {
           @apply w-full py-2 px-4 bg-red-500 text-white cursor-pointer
                  hover:bg-red-600 transition-colors duration-200;
+          font-family: 'PokemonClassic', sans-serif;
         }
       }
     }
