@@ -81,11 +81,11 @@ export interface RespuestaCadenaEvolutiva {
 }
 
 export interface CadenaEvolutiva {
-  especie: {
-    nombre: string
+  species: {
+    name: string
     url: string
   }
-  evoluciona_a: CadenaEvolutiva[]
+  evolves_to: CadenaEvolutiva[]
 }
 
 export interface EspeciePokemon {

@@ -2,6 +2,7 @@
 import { useListaPokemon } from './lista-pokemon'
 import TarjetaPokemon from '../tarjeta-pokemon/TarjetaPokemon.vue'
 import { useAlmacenPokemon } from '@/stores/almacenPokemon'
+import type { DetallePokemon } from '@/types/pokemon'
 
 const { pokemonList, cargando, error, cargarSiguientePagina } = useListaPokemon()
 const almacenPokemon = useAlmacenPokemon()
