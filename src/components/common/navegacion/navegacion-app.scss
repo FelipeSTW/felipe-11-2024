@@ -6,15 +6,19 @@
   
       .logo {
         @apply flex items-center gap-2 text-gray-800 hover:text-gray-600 
-               transition-colors duration-200;
+               transition-colors duration-200 no-underline;
   
         .icono-pokeball {
-          @apply w-8 h-8;
+          @apply w-24 h-24 object-contain;
         }
   
         .texto-logo {
           @apply text-xl font-bold;
         }
+      }
+
+      .logo-img {
+        @apply w-1/2 sm:w-56;
       }
   
       .menu {
@@ -22,10 +26,10 @@
   
         .enlace-menu {
           @apply px-3 py-2 rounded-lg text-gray-600 hover:text-gray-800 
-                 transition-colors duration-200;
+                 transition-colors duration-200 no-underline;
   
           &.activo {
-            @apply bg-blue-500 text-white hover:text-white hover:bg-blue-600;
+            @apply bg-blue-500 text-white hover:text-white hover:bg-blue-600 font-semibold;
           }
         }
       }
