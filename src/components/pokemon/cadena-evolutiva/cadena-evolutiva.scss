@@ -13,7 +13,7 @@
   }
 
   .evoluciones-contenedor {
-    @apply flex flex-col md:flex-row items-center gap-4;
+    @apply flex flex-col md:flex-row items-center gap-4 justify-center;
 
     .etapa-evolucion {
       @apply flex items-center gap-4;
