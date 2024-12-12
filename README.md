@@ -37,12 +37,12 @@ Este proyecto es una aplicación web para gestionar equipos Pokémon, donde los 
 
 1. Clona el repositorio:
    ```bash
-   git clone https://github.com/tu-usuario/nombre-del-repo.git
+   git clone https://github.com/FelipeSTW/felipe-12-2024.git poke-app
    ```
 
 2. Navega al directorio del proyecto:
    ```bash
-   cd nombre-del-repo
+   cd poke-app
    ```
 
 3. Instala las dependencias:
