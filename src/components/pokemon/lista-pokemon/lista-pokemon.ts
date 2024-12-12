@@ -15,12 +15,12 @@ export const useListaPokemon = () => {
       cargando.value = true
       const inicio = pagina.value * LIMITE_POR_PAGINA
 
-      // Verifica si no se ha excedido el límite total
+      
       if (inicio >= LIMITE_TOTAL) {
         return
       }
 
-      // Calcula cuántos Pokémon puedes cargar en esta página sin exceder el límite total
+    
       const limitePorPagina = Math.min(LIMITE_POR_PAGINA, LIMITE_TOTAL - inicio)
 
       const { datos, error: listError } = await obtenerListaPokemon(inicio, limitePorPagina)
@@ -54,7 +54,7 @@ export const useListaPokemon = () => {
 
   const cargarSiguientePagina = async () => {
     if (pagina.value * LIMITE_POR_PAGINA >= LIMITE_TOTAL) {
-      return // No cargues más páginas si alcanzaste el límite total
+      return 
     }
     pagina.value++
     await cargarPokemon()

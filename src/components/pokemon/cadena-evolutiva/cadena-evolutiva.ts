@@ -24,7 +24,7 @@ export const useCadenaEvolutiva = (props: CadenaEvolutivaProps) => {
     while (etapaActual) {
       const etapa: PokemonEvolucion[] = [];
   
-      // Agregar el Pokémon actual
+      
       if (etapaActual.species && etapaActual.species.name && etapaActual.species.url) {
         etapa.push({
           nombre: etapaActual.species.name,
@@ -32,13 +32,12 @@ export const useCadenaEvolutiva = (props: CadenaEvolutivaProps) => {
         });
       }
   
-      // Añadir la etapa actual al resultado
+      
       if (etapa.length > 0) {
         resultado.push(etapa);
       }
   
-      // Continuar con las siguientes evoluciones
-      // Aquí aseguramos que solo se pasa al siguiente nivel evolutivo
+     
       etapaActual = etapaActual.evolves_to.length > 0 ? etapaActual.evolves_to[0] : null;
     }
   

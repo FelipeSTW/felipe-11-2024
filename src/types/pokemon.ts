@@ -58,8 +58,8 @@ export interface EstadisticaPokemon {
   base_stat: number;
   effort: number;
   stat: {
-    name: string; // Nombre de la estadística en inglés
-    url: string;  // URL del recurso
+    name: string; 
+    url: string;  
   };
 }
 

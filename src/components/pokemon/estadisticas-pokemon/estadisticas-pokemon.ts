@@ -8,9 +8,9 @@ export interface EstadisticasPokemonProps {
 export const useEstadisticasPokemon = (props: EstadisticasPokemonProps) => {
   const estadisticasFormateadas = computed(() => {
     return props.estadisticas.map(stat => ({
-      nombre: traducirNombreEstadistica(stat.stat.name), // Uso de stat.name
+      nombre: traducirNombreEstadistica(stat.stat.name), 
       valor: stat.base_stat,
-      porcentaje: (stat.base_stat / 255) * 100, // 255 es el máximo valor posible
+      porcentaje: (stat.base_stat / 255) * 100, 
     }));
   });
 
