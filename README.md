@@ -1,75 +1,79 @@
-Proyecto: Aplicación de Gestión de Equipos Pokémon
+# Proyecto: Aplicación de Gestión de Equipos Pokémon
 
 Este proyecto es una aplicación web para gestionar equipos Pokémon, donde los usuarios pueden agregar, visualizar y eliminar Pokémon de su equipo, así como explorar detalles específicos de cada uno.
 
-Características Principales
+## Características Principales
 
-Gestión de Equipos:
+### Gestión de Equipos
+- **Agregar Pokémon**: Selecciona Pokémon desde una lista completa para añadir a tu equipo.
+- **Visualización del Equipo**: Explora estadísticas, tipos y sonidos de cada Pokémon.
+- **Eliminación de Pokémon**: Remueve Pokémon individuales del equipo con facilidad.
 
-Agregar Pokémon al equipo desde una lista.
+### Detalles del Pokémon
+- **Información Detallada**: Accede a:
+  - Estadísticas base
+  - Tipos
+  - Evoluciones
+  - Descripción completa
+- **Experiencia Multimedia**: Escucha los sonidos únicos de cada Pokémon.
 
-Visualizar el equipo con estadísticas, tipos y sonidos de cada Pokémon.
+### Cadena Evolutiva
+- Visualización clara y dinámica de las evoluciones del Pokémon seleccionado.
 
-Eliminar Pokémon individuales del equipo.
+## Tecnologías Utilizadas
 
-Detalles del Pokémon:
+- **Frontend**: 
+  - Vue 3
+  - SCSS
+  - Tailwind CSS
+- **Backend**: 
+  - API pública de Pokémon ([PokeAPI](https://pokeapi.co/))
+- **Herramientas**:
+  - Vite
+  - TypeScript
+- **Gestión de Dependencias**: npm
 
-Ver información detallada como estadísticas base, tipos, evoluciones y descripción.
+## Instalación
 
-Escuchar los sonidos específicos de cada Pokémon.
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/tu-usuario/nombre-del-repo.git
+   ```
 
-Cadena Evolutiva:
+2. Navega al directorio del proyecto:
+   ```bash
+   cd nombre-del-repo
+   ```
 
-Visualización clara y dinámica de las evoluciones del Pokémon seleccionado.
+3. Instala las dependencias:
+   ```bash
+   npm install
+   ```
 
-Tecnologías Utilizadas
+## Uso
 
-Frontend: Vue 3, SCSS, Tailwind CSS
-
-Backend: API pública de Pokémon (https://pokeapi.co/)
-
-Herramientas: Vite, TypeScript
-
-Gestión de Dependencias: npm
-
-Instalación
-
-Clona este repositorio:
-
-git clone https://github.com/tu-usuario/nombre-del-repo.git
-
-Navega al directorio del proyecto:
-
-cd nombre-del-repo
-
-Instala las dependencias:
-
-npm install
-
-Uso
-
-Desarrollo
-
+### Desarrollo
 Para iniciar el servidor de desarrollo:
-
+```bash
 npm run dev
+```
 
-Producción
-
+### Producción
 Para compilar el proyecto:
-
+```bash
 npm run build
+```
+El código compilado se encontrará en el directorio `dist/`.
 
-El código compilado se encontrará en el directorio dist/.
-
-Pruebas
-
-Para ejecutar las pruebas (si aplica):
-
+### Pruebas
+Para ejecutar las pruebas:
+```bash
 npm run test
+```
 
-Estructura del Proyecto
+## Estructura del Proyecto
 
+```
 ├── src
 │   ├── components
 │   │   ├── pokemon
@@ -78,48 +82,51 @@ Estructura del Proyecto
 │   │   │   │   ├── reproductor-sonido.ts
 │   │   │   │   ├── reproductor-sonido.html
 │   │   │   │   └── reproductor-sonido.scss
-│   │   ├── equipo-pokemon
-│   │   │   ├── EquipoPokemon.vue
-│   │   │   ├── equipo-pokemon.ts
-│   │   │   ├── equipo-pokemon.html
-│   │   │   └── equipo-pokemon.scss
-│   ├── views
-│   │   ├── team
-│   │   │   ├── vista-equipo
-│   │   │   │   ├── VistaEquipo.vue
-│   │   │   │   ├── vista-equipo.ts
-│   │   │   │   ├── vista-equipo.html
-│   │   │   │   └── vista-equipo.scss
-│   ├── styles
-│   │   └── tailwind.css
+│   │   │   ├── equipo-pokemon
+│   │   │   │   ├── EquipoPokemon.vue
+│   │   │   │   ├── equipo-pokemon.ts
+│   │   │   │   ├── equipo-pokemon.html
+│   │   │   │   └── equipo-pokemon.scss
+│   │   ├── views
+│   │   │   ├── team
+│   │   │   │   ├── vista-equipo
+│   │   │   │   │   ├── VistaEquipo.vue
+│   │   │   │   │   ├── vista-equipo.ts
+│   │   │   │   │   ├── vista-equipo.html
+│   │   │   │   │   └── vista-equipo.scss
+│   │   ├── styles
+│   │   │   └── tailwind.css
 ├── dist
 ├── vite.config.ts
 ├── tsconfig.json
 └── README.md
+```
 
-Consideraciones
+## Consideraciones
 
-La API utilizada es pública y puede estar sujeta a limitaciones o cambios.
+- La API utilizada es pública y puede estar sujeta a limitaciones o cambios.
+- Se utiliza `@apply` de Tailwind CSS para estilos reutilizables.
+- Configuración optimizada para despliegue en plataformas como Netlify o Vercel.
 
-Se utiliza @apply de Tailwind CSS para estilos reutilizables.
-
-Configuración optimizada para despliegue en plataformas como Netlify o Vercel.
-
-Contribuciones
+## Contribuciones
 
 ¡Las contribuciones son bienvenidas! Por favor, sigue estos pasos:
 
-Haz un fork del repositorio.
+1. Haz un fork del repositorio.
+2. Crea una rama para tu característica o corrección:
+   ```bash
+   git checkout -b feature/nueva-caracteristica
+   ```
+3. Realiza tus cambios y haz un commit:
+   ```bash
+   git commit -m "Descripción del cambio"
+   ```
+4. Haz un push a la rama:
+   ```bash
+   git push origin feature/nueva-caracteristica
+   ```
+5. Abre un Pull Request.
 
-Crea una rama para tu característica o corrección (git checkout -b feature/nueva-caracteristica).
+## Autor
 
-Realiza tus cambios y haz un commit (git commit -m "Descripción del cambio").
-
-Haz un push a la rama (git push origin feature/nueva-caracteristica).
-
-Abre un Pull Request.
-
-
-Autor
-
-Desarrollado por Felipe Ahumada .
+Desarrollado por Felipe Ahumada.
